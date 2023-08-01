@@ -1,0 +1,32 @@
+<h1> hi this edit page</h1>
+<%=link_to 'update', @stock, data: { turbo_method: :update, turbo_confirm: 'Are you sure?' }%>
+
+
+
+        <div>
+        <h1> Stock List </h1> 
+        <table>
+        <thead>
+        <tr>
+        <th>Stock</th>
+        <th>Price</th>
+        <th>Market capital</th>
+        </tr>
+        </thead>
+        <tbody>
+        <%@stocks.each do |item| %>
+        <tr>
+        <td><%=item.stock%></td>
+        <td><%=item.price%></td>
+        <td><%=item.market_capital%></td>
+        <td><%=link_to 'view', item%></td>
+        <td><%=link_to 'edit', edit_stock_path(item)%></td>
+        <td><%=link_to 'delete', item, data: { turbo_method: :delete, turbo_confirm: 'Are you sure?' }%></td>
+        </tr>
+        <% end %>
+        <%=link_to 'new stock', new_stock_path%>
+
+        </tbody>
+
+        </table>
+        </div>

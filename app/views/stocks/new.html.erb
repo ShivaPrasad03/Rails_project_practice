@@ -1,0 +1,12 @@
+<h1> hi this new page</h1>
+<%=form_with model: @stock do |form|%>
+<%=form.submit%>
+<%end%>
+
+
+<h1> These are stocks </h1>
+<p><strong>Stock name: </strong><%=@stock.stock%></p>
+<p><strong>Stock price: </strong><%=@stock.price%></p>
+<p><strong>Market capital: </strong><%=@stock.market_capital%></p>
+<%= link_to 'back', stocks_path%>
+<%= link_to 'edit', edit_stock_path(@stock)%>
